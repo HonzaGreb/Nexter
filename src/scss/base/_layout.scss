@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start full-start] 8rem [sidebar-end full-end] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.sidebar {
+  grid-row: 1/-1;
+  grid-column: sidebar-start / sidebar-end;
+}
+
+.features {
+  grid-row: 2/3;
+  grid-column: center-start / center-end;
+}
+
+.header {
+  grid-column: sidebar-end / col-end 6;
+}
+
+.realtors {
+  grid-column: col-start 7 / full-end;
+}
+
+.story {
+  &__pictures {
+    grid-column: sidebar-start / col-end 4;
+  }
+
+  &__content {
+    grid-column: col-start 5 / full-end;
+  }
+}
+
+.gallery {
+  grid-column: full-start / full-end;
+}
+
+.homes {
+  grid-column: center-start / center-end;
+}
+
+.footer {
+  grid-column: full-start / full-end;
+}
