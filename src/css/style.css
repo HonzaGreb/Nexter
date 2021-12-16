@@ -1,0 +1,23 @@
+/* Error: Module loop: this module is already being loaded.
+ *   ,--> src\scss\base\_base.scss
+ * 1 | @use '../abstracts' as *;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^ new load
+ *   '
+ *   ,--> src\scss\style.scss
+ * 1 | @use './abstracts/index' as *;
+ *   | ============================= original load
+ *   '
+ *   src\scss\base\_base.scss 1:1        @forward
+ *   src\scss\abstracts\_index.scss 1:1  @use
+ *   src\scss\style.scss 1:1             root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > src\\scss\\base\\_base.scss\a 1 \2502  @use '../abstracts' as *;\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > src\\scss\\style.scss\a 1 \2502  @use './abstracts/index' as *;\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   src\\scss\\base\\_base.scss 1:1        @forward\a   src\\scss\\abstracts\\_index.scss 1:1  @use\a   src\\scss\\style.scss 1:1             root stylesheet";
+}
