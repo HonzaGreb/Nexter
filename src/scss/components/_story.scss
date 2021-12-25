@@ -1,11 +1,51 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables' as *;
 
 .story {
   &__pictures {
     background-color: $color-primary;
+    background-image: linear-gradient(
+        to bottom left,
+        rgba($color-primary, 0.5),
+        rgba($color-primary-dark, 0.5)
+      ),
+      url('../img/back.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+  }
+
+  &__img {
+    &--1 {
+      width: 100%;
+      grid-row: 2/6;
+      grid-column: 2/6;
+      box-shadow: 1rem 2rem 5rem rgba(#000, 0.15);
+    }
+
+    &--2 {
+      width: 115%;
+      grid-row: 4/6;
+      grid-column: 4/7;
+      z-index: 5;
+      box-shadow: 1rem 2rem 5rem rgba(#000, 0.25);
+    }
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     background-color: $color-grey-light-1;
+    padding: 6rem 8vw;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
   }
 }

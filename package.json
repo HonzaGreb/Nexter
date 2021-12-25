@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "sass:watch": "sass src/scss/style.scss src/css/style.css -w",
+    "sass:watch": "sass --watch src/scss/style.scss:src/css/style.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

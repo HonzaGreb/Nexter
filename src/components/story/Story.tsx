@@ -1,12 +1,13 @@
 import StoryPictures from './StoryPictures'
 import StoryContent from './StoryContent'
+import { Fragment } from 'react'
 
 const Story = () => {
   return (
-    <div className='story'>
+    <Fragment>
       <StoryPictures />
       <StoryContent />
-    </div>
+    </Fragment>
   )
 }
 

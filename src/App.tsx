@@ -7,20 +7,20 @@ import Homes from './components/homes/Homes'
 import Gallery from './components/Gallery/Gallery'
 import Footer from './components/footer/Footer'
 
-import { Fragment } from 'react'
+import './css/style.css'
 
 function App() {
   return (
-    <Fragment>
+    <main className='container'>
       <Header />
-      <Sidebar />
       <Realtors />
+      <Sidebar />
       <Features />
       <Story />
       <Homes />
       <Gallery />
       <Footer />
-    </Fragment>
+    </main>
   )
 }
 

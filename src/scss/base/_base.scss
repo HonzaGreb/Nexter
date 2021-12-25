@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables' as *;
 
 *,
 *::before,
@@ -17,6 +17,7 @@ body {
   width: 100vw;
   font-family: $font-primary;
   color: $color-grey-dark-2;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.6;
 }
