@@ -1,5 +1,56 @@
 @use '../abstracts/variables' as *;
 
 .header {
-  background-color: $color-grey-dark-1;
+  background-image: linear-gradient(rgba($color-secondary, 0.9), rgba($color-secondary, 0.9)),
+    url('../img/hero.jpeg');
+  background-position: center;
+  background-size: cover;
+
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-auto-columns: max-content;
+  justify-content: center;
+  row-gap: 1.5rem;
+  padding: 4rem 8rem 8rem;
+
+  &__logo {
+    justify-self: center;
+    height: 3rem;
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start;
+  }
+}
+
+.seen-on {
+  &__text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    gap: 1rem;
+    align-items: center;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: currentColor;
+      display: block;
+      height: 1px;
+    }
+  }
+
+  &__logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 5rem;
+    justify-items: center;
+  }
+
+  &__logo {
+    height: 2.2rem;
+    filter: brightness(70%);
+  }
 }
