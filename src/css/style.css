@@ -375,6 +375,37 @@ body {
 
 .sidebar {
   background-color: #c69963;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar__btn {
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  margin-top: 3rem;
+  cursor: pointer;
+  width: 4.5rem;
+  height: 3px;
+  transition: all 200ms;
+}
+
+.sidebar__btn::before, .sidebar__btn::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  width: 4.5rem;
+  height: 3px;
+}
+
+.sidebar__btn::before {
+  top: 1.2rem;
+}
+
+.sidebar__btn::after {
+  bottom: 1.2rem;
 }
 
 .story__pictures {
