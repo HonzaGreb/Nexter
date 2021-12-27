@@ -2,4 +2,35 @@
 
 .realtors {
   background-color: $color-secondary;
+
+  display: grid;
+  grid-template-rows: min-content max-content;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.realtor {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  gap: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &__image {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+  }
+
+  &__houses {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+  }
 }

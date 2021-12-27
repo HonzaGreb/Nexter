@@ -423,6 +423,36 @@ body {
 
 .realtors {
   background-color: #101d2c;
+  display: grid;
+  grid-template-rows: min-content max-content;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.realtor {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  gap: 1rem;
+}
+
+.realtor:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.realtor__image {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+}
+
+.realtor__houses {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #aaa;
 }
 
 .sidebar {
