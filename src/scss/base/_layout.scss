@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .container {
   display: grid;
@@ -9,33 +10,82 @@
       [col-start] minmax(min-content, 14rem) [col-end]
     )
     [center-end] minmax(6rem, 1fr) [full-end];
+  overflow: hidden;
+
+  @include respond(1000) {
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  @include respond(800) {
+    grid-template-rows: 8rem calc(100vh - 8rem) min-content min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
 }
 
 .sidebar {
   grid-row: 1/-1;
   grid-column: sidebar-start / sidebar-end;
+
+  @include respond(1000) {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+  }
 }
 
 .features {
-  grid-row: 2/3;
   grid-column: center-start / center-end;
 }
 
 .header {
   grid-column: sidebar-end / col-end 6;
+
+  @include respond(1000) {
+    grid-column: full-start / col-end 6;
+  }
+
+  @include respond(800) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .realtors {
   grid-column: col-start 7 / full-end;
+
+  @include respond(800) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .story {
   &__pictures {
     grid-column: sidebar-end / col-end 4;
+
+    @include respond(1000) {
+      grid-column: full-start / col-end 4;
+    }
+
+    @include respond(800) {
+      grid-column: full-start / full-end;
+    }
   }
 
   &__content {
     grid-column: col-start 5 / full-end;
+
+    @include respond(800) {
+      grid-column: full-start / full-end;
+    }
   }
 }
 

@@ -11,6 +11,11 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 1200px) {
+  html {
+    font-size: 50%;
+  }
+}
 body {
   width: 100vw;
   font-family: "Nunito", sans-serif;
@@ -100,15 +105,33 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  overflow: hidden;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    grid-template-rows: 8rem calc(100vh - 8rem) min-content min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
+}
 .sidebar {
   grid-row: 1/-1;
   grid-column: sidebar-start/sidebar-end;
 }
 
+@media (max-width: 1000px) {
+  .sidebar {
+    grid-row: 1/span 1;
+    grid-column: 1/-1;
+  }
+}
 .features {
-  grid-row: 2/3;
   grid-column: center-start/center-end;
 }
 
@@ -116,18 +139,48 @@ body {
   grid-column: sidebar-end/col-end 6;
 }
 
+@media (max-width: 1000px) {
+  .header {
+    grid-column: full-start/col-end 6;
+  }
+}
+@media (max-width: 800px) {
+  .header {
+    grid-column: full-start/full-end;
+  }
+}
 .realtors {
   grid-column: col-start 7/full-end;
 }
 
+@media (max-width: 800px) {
+  .realtors {
+    grid-column: full-start/full-end;
+  }
+}
 .story__pictures {
   grid-column: sidebar-end/col-end 4;
 }
 
+@media (max-width: 1000px) {
+  .story__pictures {
+    grid-column: full-start/col-end 4;
+  }
+}
+@media (max-width: 800px) {
+  .story__pictures {
+    grid-column: full-start/full-end;
+  }
+}
 .story__content {
   grid-column: col-start 5/full-end;
 }
 
+@media (max-width: 800px) {
+  .story__content {
+    grid-column: full-start/full-end;
+  }
+}
 .gallery {
   grid-column: full-start/full-end;
 }
@@ -149,6 +202,11 @@ body {
   align-items: start;
 }
 
+@media (max-width: 500px) {
+  .features {
+    margin: 8rem 0;
+  }
+}
 .feature {
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -172,6 +230,11 @@ body {
   padding: 8rem;
 }
 
+@media (max-width: 800px) {
+  .footer {
+    padding: 4rem;
+  }
+}
 .nav {
   list-style: none;
   display: grid;
@@ -301,8 +364,8 @@ body {
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-auto-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
+  grid-auto-columns: minmax(min-content, max-content);
   justify-content: center;
   row-gap: 1.5rem;
   padding: 4rem 8rem 8rem;
@@ -339,10 +402,12 @@ body {
   gap: 1rem;
   padding: 0 5rem;
   justify-items: center;
+  align-items: center;
 }
 
 .seen-on__logo {
-  height: 2.2rem;
+  max-height: 2.2rem;
+  max-width: 100%;
   filter: brightness(70%);
 }
 
@@ -353,6 +418,11 @@ body {
   margin: 15rem 0;
 }
 
+@media (max-width: 600px) {
+  .homes {
+    margin: 6rem 0;
+  }
+}
 .home {
   background-color: #f9f7f6;
   display: grid;
@@ -429,6 +499,7 @@ body {
   justify-items: center;
   align-items: center;
   gap: 1rem;
+  padding: 5rem;
 }
 
 .realtor {
@@ -459,8 +530,15 @@ body {
   background-color: #c69963;
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
+@media (max-width: 1000px) {
+  .sidebar {
+    justify-content: end;
+    align-items: center;
+  }
+}
 .sidebar__btn {
   position: relative;
   border: none;
@@ -473,6 +551,11 @@ body {
   transition: all 200ms;
 }
 
+@media (max-width: 1000px) {
+  .sidebar__btn {
+    margin-top: 0;
+  }
+}
 .sidebar__btn::before, .sidebar__btn::after {
   content: "";
   position: absolute;
@@ -525,6 +608,11 @@ body {
   padding: 6rem 8vw;
 }
 
+@media (max-width: 600px) {
+  .story__content {
+    padding: 4rem 6vw;
+  }
+}
 .story__text {
   font-size: 1.5rem;
   font-style: italic;

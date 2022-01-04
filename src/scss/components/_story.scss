@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .story {
   &__pictures {
@@ -41,6 +42,10 @@
     justify-content: center;
     background-color: $color-grey-light-1;
     padding: 6rem 8vw;
+
+    @include respond(600) {
+      padding: 4rem 6vw;
+    }
   }
 
   &__text {

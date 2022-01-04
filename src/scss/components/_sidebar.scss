@@ -1,9 +1,16 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .sidebar {
   background-color: $color-primary;
   display: flex;
   justify-content: center;
+  padding: 1rem;
+
+  @include respond(1000) {
+    justify-content: end;
+    align-items: center;
+  }
 
   &__btn {
     position: relative;
@@ -16,6 +23,10 @@
     width: 4.5rem;
     height: 3px;
     transition: all 200ms;
+
+    @include respond(1000) {
+      margin-top: 0;
+    }
 
     &::before,
     &::after {
